@@ -19,6 +19,7 @@ public class LoginTest {
     private  void beforeTest(){
         webDriver = driver.getDriver();
         login=new LoginPageObject(webDriver);
+        login.getBaseUrl(url);
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         webDriver.manage().window().maximize();
     }
@@ -29,9 +30,17 @@ public class LoginTest {
     }
     @Test   //PP-818
     private void clickOnLogo(){
-        login.getBaseUrl(url);
         login.ClickOnLogo();
         assert (webDriver.getCurrentUrl().equals("https://www.gopetplan.com/"));
+    }
+    @Test   //PP-113
+    private void loginWithWrongCredentials(){
+        login.setEmailAddress("example@example.com");
+        assert (login.getEmailAddressLabel().equals("email address"));
+        login.setPassword("wrong password");
+        assert (login.getPasswordLabel().equals("password"));
+        login.clickOnSingIn();
+        assert (login.getValidationMessage().equals("Sorry, the email and password you entered does not match our records. Please try again."));
     }
 
 }

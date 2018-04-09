@@ -44,5 +44,17 @@ public class LoginPageObject extends PageObject {
         password.clear();
         password.sendKeys(pas);
     }
+    public String getEmailAddressLabel(){
+        return emailAddressLabel.getText();
+    }
+    public String getPasswordLabel(){
+        return password.getText();
+    }
+    public void clickOnSingIn(){
+        signIn.click();
+    }
+    public String getValidationMessage(){
+        return validationMessage.getText();
+    }
 }
 
