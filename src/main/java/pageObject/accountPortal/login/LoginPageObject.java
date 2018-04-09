@@ -3,16 +3,11 @@ package pageObject.accountPortal.login;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import pageObject.PageObject;
 
-import java.util.List;
-
-import static org.testng.Assert.assertEquals;
-
 public class LoginPageObject extends PageObject {
-    @FindBy(partialLinkText ="Petplan")
+    @FindBy(xpath = "//a[@href='http://www.gopetplan.com']")
     private WebElement logo;
     @FindBy(name = "email")
     private WebElement emailAddress;
@@ -26,12 +21,28 @@ public class LoginPageObject extends PageObject {
     private WebElement forgotPassword;
     @FindBy(partialLinkText = "start a quote")
     private WebElement startAQuote;
+    @FindBy(xpath = "//label[@class='floating-label' and @for='email']")
+    private WebElement emailAddressLabel;
+    @FindBy(xpath = "//label[@class='floating-label' and @for='password']")
+    private WebElement passwordLabel;
+    @FindBy(xpath = "//p[@ng-message = 'email']")
+    private WebElement invalidEmailError;
+    @FindBy(xpath = "//p[@ng-message='invalidCredentials']")
+    private WebElement validationMessage;
 
     public LoginPageObject(WebDriver driver){
         super(driver);
     }
-    public void ClickOnLogin(){
+    public void ClickOnLogo(){
         logo.click();
+    }
+    public void setEmailAddress(String email){
+        emailAddress.clear();
+        emailAddress.sendKeys(email);
+    }
+    public void setPassword(String pas){
+        password.clear();
+        password.sendKeys(pas);
     }
 }
 

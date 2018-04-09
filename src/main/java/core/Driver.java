@@ -55,7 +55,7 @@ public class Driver {
                 driver.manage().window().maximize();
                 break;
         }
-        driver.get(BASE_URL);
+        //driver.get(BASE_URL);
     }
 
     private String getWebDriver(){

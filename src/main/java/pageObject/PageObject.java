@@ -11,10 +11,13 @@ public class PageObject {
         this.driver=driver;
         PageFactory.initElements(driver,this);
     }
-    public void getBaseUrl(){
-        driver.get(BASE_URL);
+    public String getCurrentUrl(){
+        return driver.getCurrentUrl();
     }
-    public void getCurrentPageTitle(){
-        driver.getTitle();
+    public String getCurrentPageTitle(){
+        return driver.getTitle();
+    }
+    public void getBaseUrl(String url){
+        driver.get(url);
     }
 }
