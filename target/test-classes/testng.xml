@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite">
+    <test name="PetPlan">
+        <classes>
+            <class name="accountPortal.login.LoginTest"/>
+        </classes>
+    </test>
+</suite>
