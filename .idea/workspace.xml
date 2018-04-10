@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b3d127a-0280-47db-9364-dd52902be933" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pageObject/salesFunnel/AboutYourPetPageObject.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/salesFunnel/AoutYourPetTest.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/accountPortal/login/LoginTest.class" afterPath="$PROJECT_DIR$/target/test-classes/accountPortal/login/LoginTest.class" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -231,6 +232,30 @@
               <item name="Petplan-test" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="petplan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Petplan-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="petplan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Petplan-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="pageObject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="petplan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Petplan-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="pageObject" type="462c0819:PsiDirectoryNode" />
+              <item name="salesFunnel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="petplan" type="b2602c69:ProjectViewProjectNode" />
@@ -587,7 +612,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523372186606</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="PP-119 full">
+      <created>1523372289710</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1523372289711</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -660,7 +692,8 @@
     <MESSAGE value="Initial state" />
     <MESSAGE value="PP-113 Done" />
     <MESSAGE value="PP-119 Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="PP-119 Done" />
+    <MESSAGE value="PP-119 full" />
+    <option name="LAST_COMMIT_MESSAGE" value="PP-119 full" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

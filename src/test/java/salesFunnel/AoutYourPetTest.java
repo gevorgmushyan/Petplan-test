@@ -1,0 +1,58 @@
+package salesFunnel;
+
+import core.Driver;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import pageObject.salesFunnel.AboutYourPetPageObject;
+
+import java.util.concurrent.TimeUnit;
+
+public class AoutYourPetTest {
+    private Driver driver = new Driver();
+    private WebDriver webDriver;
+    private AboutYourPetPageObject aboutPet;
+    JavascriptExecutor js;
+    private String url = "http://account.gopetplan.com/beta#/AboutYourPet?Region=US";
+    private String chooseAndCustomiztUrl = "https://account.gopetplan.com/beta#/ChooseAndCustomize";
+
+    private String petName = "Pet1";
+    private int selectedBreedIndex = 10;
+    private int selectedAgeIndex = 19;
+    private String validZipCode = "80246";
+    private String validEmailAddress = "example@example.com";
+
+    @BeforeMethod
+    private void beforeTest(){
+        webDriver = driver.getDriver();
+        aboutPet = new AboutYourPetPageObject(webDriver);
+        aboutPet.getBaseUrl(url);
+        js = (JavascriptExecutor) webDriver;
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        webDriver.manage().window().maximize();
+    }
+    @AfterMethod
+    private void afterTest() throws InterruptedException {
+        Thread.sleep(2000);
+        webDriver.close();
+        webDriver.quit();
+    }
+    @Test   //PP-192
+    private void getYoutQuoteWithValidData() throws InterruptedException {
+        aboutPet.setPetName(petName);
+        aboutPet.selectCatButton();
+        aboutPet.selectBreed(selectedBreedIndex);
+        //aboutPet.selectBreed("Afghan Hound");
+        aboutPet.selectAge(selectedAgeIndex);
+        aboutPet.setZipCode(validZipCode);
+        aboutPet.setEmailAddress(validEmailAddress);
+        js.executeScript("window.scrollBy(0,200)");
+        Thread.sleep(1000);
+        aboutPet.clickOnGetYourQuote();
+        Thread.sleep(1000);
+        assert (webDriver.getCurrentUrl().equals(chooseAndCustomiztUrl));
+    }
+}
