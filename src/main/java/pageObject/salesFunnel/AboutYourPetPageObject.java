@@ -48,6 +48,29 @@ public class AboutYourPetPageObject extends PageObject {
     @FindBy(id = "chooseAndCustomize")
     private WebElement getYourQuote;
 
+    @FindBy(xpath = "//strong[@ng-hide='account.loginModalIsOpen']")
+    private WebElement registeredEmailErrorMessage;
+
+    @FindBy(xpath = "//a[@class='login-warning']")
+    private WebElement loginLink;
+
+    // pop-up for already registered email
+    @FindBy(xpath = "//div[@class='ngdialog-close ng-scope']")
+    private WebElement popUpCloseButton;
+
+    @FindBy(xpath = "//div[@class='input-group']//input[@type='text']")
+    private WebElement popUpEmail;
+
+    @FindBy(id = "modalPass")
+    private WebElement popUpPassword;
+
+    @FindBy(xpath = "//a[@class='anchor-link']")
+    private WebElement popUpForgotPassword;
+
+    @FindBy(xpath = "//a[@class='btn__link--primary btn__link--cta'][contains(text(),'login')]")
+    private WebElement popUpLogin;
+
+
     public AboutYourPetPageObject(WebDriver driver){
         super(driver);
     }
@@ -89,5 +112,17 @@ public class AboutYourPetPageObject extends PageObject {
     }
     public void clickOnGetYourQuote(){
         getYourQuote.click();
+    }
+    public void closePopUp(){
+        popUpCloseButton.click();
+    }
+    public String getPopUpEmail(){
+        return popUpEmail.getText();
+    }
+    public String getRegisteredEmailError(){
+        return registeredEmailErrorMessage.getText() + loginLink.getText();
+    }
+    public void clickOnLoginLink(){
+        loginLink.click();
     }
 }

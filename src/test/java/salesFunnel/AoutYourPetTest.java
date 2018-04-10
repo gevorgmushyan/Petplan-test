@@ -24,6 +24,9 @@ public class AoutYourPetTest {
     private int selectedAgeIndex = 19;
     private String validZipCode = "80246";
     private String validEmailAddress = "example@example.com";
+    private String registeredEmailAddress = "gevorgmio2@yandex.ru";
+
+    private String validationRegisteredEmail = "This email is taken, please either choose another or login";
 
     @BeforeMethod
     private void beforeTest(){
@@ -50,9 +53,19 @@ public class AoutYourPetTest {
         aboutPet.setZipCode(validZipCode);
         aboutPet.setEmailAddress(validEmailAddress);
         js.executeScript("window.scrollBy(0,200)");
-        Thread.sleep(1000);
+        Thread.sleep(1000); //To Do
         aboutPet.clickOnGetYourQuote();
-        Thread.sleep(1000);
+        Thread.sleep(1000); //To Do
         assert (webDriver.getCurrentUrl().equals(chooseAndCustomiztUrl));
+    }
+    @Test   //PP-207
+    private void loginWithRegisteredEmail(){
+        aboutPet.setEmailAddress(registeredEmailAddress);
+        assert (aboutPet.getPopUpEmail().equals(registeredEmailAddress));
+        aboutPet.closePopUp();
+        assert (aboutPet.getRegisteredEmailError().equals(validationRegisteredEmail)); //To Do for colors
+        aboutPet.clickOnLoginLink();
+        assert (aboutPet.getPopUpEmail().equals(registeredEmailAddress));
+
     }
 }
