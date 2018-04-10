@@ -70,6 +70,11 @@ public class AboutYourPetPageObject extends PageObject {
     @FindBy(xpath = "//a[@class='btn__link--primary btn__link--cta'][contains(text(),'login')]")
     private WebElement popUpLogin;
 
+    @FindBy(xpath = "//html//div[@id='ngdialog1']//div[1]/label[1]")
+    private WebElement popUpEmailLabel;
+
+    @FindBy(xpath = "//label[@class='floating-label'][contains(text(),'password')]")
+    private WebElement popUpPasswordLabel;
 
     public AboutYourPetPageObject(WebDriver driver){
         super(driver);
@@ -117,12 +122,24 @@ public class AboutYourPetPageObject extends PageObject {
         popUpCloseButton.click();
     }
     public String getPopUpEmail(){
-        return popUpEmail.getText();
+        return popUpEmail.getAttribute("value");
     }
     public String getRegisteredEmailError(){
-        return registeredEmailErrorMessage.getText() + loginLink.getText();
+        return registeredEmailErrorMessage.getText();
     }
     public void clickOnLoginLink(){
         loginLink.click();
+    }
+    public WebElement getRegisteredEmailErrorMessage(){
+        return registeredEmailErrorMessage;
+    }
+    public WebElement getLoginLink(){
+        return loginLink;
+    }
+    public String getPopUpEmailLabel(){
+        return popUpEmailLabel.getText();
+    }
+    public String getPopUpPasswordLabel(){
+        return popUpPasswordLabel.getText();
     }
 }

@@ -2,21 +2,29 @@ package core;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class Wait {
-
-    public void waitForPageLoad(final WebDriver driver) {
+    private WebDriver driver;
+    public Wait(WebDriver driver){
+        this.driver = driver;
+    }
+    public void waitForPageLoad() {
         WebDriverWait wait = new WebDriverWait(driver, 30);
-
         wait.until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver wdriver) {
+            public Boolean apply(WebDriver driver) {
                 return ((JavascriptExecutor) driver).executeScript(
                         "return document.readyState"
                 ).equals("complete");
             }
         });
+    }
+    public void waitForElementText(WebElement el, String text, int waitTime){
+        WebDriverWait wait = new WebDriverWait(driver, waitTime);
+        wait.until(ExpectedConditions.textToBePresentInElement(el, text));
     }
 }

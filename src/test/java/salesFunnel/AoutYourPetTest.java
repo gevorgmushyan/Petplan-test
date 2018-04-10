@@ -1,6 +1,7 @@
 package salesFunnel;
 
 import core.Driver;
+import core.Wait;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
@@ -15,7 +16,8 @@ public class AoutYourPetTest {
     private Driver driver = new Driver();
     private WebDriver webDriver;
     private AboutYourPetPageObject aboutPet;
-    JavascriptExecutor js;
+    private Wait wait;
+    private JavascriptExecutor js;
     private String url = "http://account.gopetplan.com/beta#/AboutYourPet?Region=US";
     private String chooseAndCustomiztUrl = "https://account.gopetplan.com/beta#/ChooseAndCustomize";
 
@@ -25,12 +27,14 @@ public class AoutYourPetTest {
     private String validZipCode = "80246";
     private String validEmailAddress = "example@example.com";
     private String registeredEmailAddress = "gevorgmio2@yandex.ru";
+    private String password = "aa250812aa";
 
     private String validationRegisteredEmail = "This email is taken, please either choose another or login";
 
     @BeforeMethod
     private void beforeTest(){
         webDriver = driver.getDriver();
+        wait = new Wait(webDriver);
         aboutPet = new AboutYourPetPageObject(webDriver);
         aboutPet.getBaseUrl(url);
         js = (JavascriptExecutor) webDriver;
@@ -63,9 +67,12 @@ public class AoutYourPetTest {
         aboutPet.setEmailAddress(registeredEmailAddress);
         assert (aboutPet.getPopUpEmail().equals(registeredEmailAddress));
         aboutPet.closePopUp();
+        wait.waitForElementText(aboutPet.getLoginLink(),"login", 10);
+        wait.waitForElementText(aboutPet.getRegisteredEmailErrorMessage(),"This email is taken, please either choose another or", 10);
         assert (aboutPet.getRegisteredEmailError().equals(validationRegisteredEmail)); //To Do for colors
         aboutPet.clickOnLoginLink();
         assert (aboutPet.getPopUpEmail().equals(registeredEmailAddress));
+       // assert ()
 
     }
 }
