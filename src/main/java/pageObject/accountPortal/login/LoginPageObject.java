@@ -15,7 +15,7 @@ public class LoginPageObject extends PageObject {
     private WebElement password;
     @FindBy(id = "remember")
     private WebElement rememberMe;
-    @FindBy(id = "imbLogin")
+    @FindBy(xpath = "//button[@type='submit']")
     private WebElement signIn;
     @FindBy(linkText = "forgot password?")
     private WebElement forgotPassword;
@@ -48,7 +48,7 @@ public class LoginPageObject extends PageObject {
         return emailAddressLabel.getText();
     }
     public String getPasswordLabel(){
-        return password.getText();
+        return passwordLabel.getText();
     }
     public void clickOnSingIn(){
         signIn.click();

@@ -24,7 +24,8 @@ public class LoginTest {
         webDriver.manage().window().maximize();
     }
     @AfterMethod
-    private   void afterTest(){
+    private   void afterTest() throws InterruptedException {
+        Thread.sleep(2000);
         webDriver.close();
         webDriver.quit();
     }
