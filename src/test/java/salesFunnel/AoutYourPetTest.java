@@ -4,6 +4,7 @@ import core.Driver;
 import core.Wait;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
@@ -27,9 +28,11 @@ public class AoutYourPetTest {
     private String validZipCode = "80246";
     private String validEmailAddress = "example@example.com";
     private String registeredEmailAddress = "gevorgmio2@yandex.ru";
-    private String password = "aa250812aa";
+    private String password = "a";
 
     private String validationRegisteredEmail = "This email is taken, please either choose another or login";
+    private String popUpEmailLabel = "email address";
+    private String popUpPasswoedLabel = "password";
 
     @BeforeMethod
     private void beforeTest(){
@@ -37,6 +40,7 @@ public class AoutYourPetTest {
         wait = new Wait(webDriver);
         aboutPet = new AboutYourPetPageObject(webDriver);
         aboutPet.getBaseUrl(url);
+        new Wait(webDriver).waitForPageLoad();
         js = (JavascriptExecutor) webDriver;
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         webDriver.manage().window().maximize();
@@ -63,16 +67,23 @@ public class AoutYourPetTest {
         assert (webDriver.getCurrentUrl().equals(chooseAndCustomiztUrl));
     }
     @Test   //PP-207
-    private void loginWithRegisteredEmail(){
+    private void loginWithRegisteredEmail() throws InterruptedException {
         aboutPet.setEmailAddress(registeredEmailAddress);
+        aboutPet.waitForPouUpAppear();
         assert (aboutPet.getPopUpEmail().equals(registeredEmailAddress));
         aboutPet.closePopUp();
-        wait.waitForElementText(aboutPet.getLoginLink(),"login", 10);
-        wait.waitForElementText(aboutPet.getRegisteredEmailErrorMessage(),"This email is taken, please either choose another or", 10);
+        aboutPet.waitForPouUpDisappear();
+        wait.waitForElementText(aboutPet.getRegisteredEmailErrorMessage(),"This email is taken, please either choose another or", 2);
         assert (aboutPet.getRegisteredEmailError().equals(validationRegisteredEmail)); //To Do for colors
-        aboutPet.clickOnLoginLink();
+        aboutPet.clickOnLoginLink();//To DO
+        aboutPet.waitForPouUpAppear();
         assert (aboutPet.getPopUpEmail().equals(registeredEmailAddress));
-       // assert ()
-
+        assert (aboutPet.getPopUpEmailLabel().equals(popUpEmailLabel));
+        aboutPet.setPopUpPassword(password);
+        assert (aboutPet.getPopUpPasswordLabel().equals(popUpPasswoedLabel));
+        aboutPet.clickOnPopUpLogin();
+        assert (aboutPet.isLoggedIn());
+        assert (aboutPet.isZipCodeDisabled());
+        assert (aboutPet.isEmailDisabled());
     }
 }

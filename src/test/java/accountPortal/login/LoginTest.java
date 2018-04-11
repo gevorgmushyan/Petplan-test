@@ -1,6 +1,7 @@
 package accountPortal.login;
 
 import core.Driver;
+import core.Wait;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -29,6 +30,7 @@ public class LoginTest {
         webDriver = driver.getDriver();
         login=new LoginPageObject(webDriver);
         login.getBaseUrl(url);
+        new Wait(webDriver).waitForPageLoad();
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         webDriver.manage().window().maximize();
     }

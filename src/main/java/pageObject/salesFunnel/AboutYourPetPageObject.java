@@ -1,8 +1,11 @@
 package pageObject.salesFunnel;
 
+import core.Wait;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import pageObject.PageObject;
 
@@ -70,14 +73,23 @@ public class AboutYourPetPageObject extends PageObject {
     @FindBy(xpath = "//a[@class='btn__link--primary btn__link--cta'][contains(text(),'login')]")
     private WebElement popUpLogin;
 
-    @FindBy(xpath = "//html//div[@id='ngdialog1']//div[1]/label[1]")
+    @FindBy(xpath = "//div[@class='input-group']//label[@class='floating-label' and @for='email']")
     private WebElement popUpEmailLabel;
 
     @FindBy(xpath = "//label[@class='floating-label'][contains(text(),'password')]")
     private WebElement popUpPasswordLabel;
 
+    @FindBy(xpath = "//li[@class='ng-binding']")
+    private WebElement logedInAs;
+    @FindBy(xpath = "//div[@name='forms.loginModalForm']")
+    private WebElement popup;
+
+    private String loggedInText = "logged in as";
+    private Wait wait;
+
     public AboutYourPetPageObject(WebDriver driver){
         super(driver);
+        wait = new Wait(driver);
     }
     public void setPetName(String name){
         petName.clear();
@@ -120,6 +132,7 @@ public class AboutYourPetPageObject extends PageObject {
     }
     public void closePopUp(){
         popUpCloseButton.click();
+
     }
     public String getPopUpEmail(){
         return popUpEmail.getAttribute("value");
@@ -129,6 +142,8 @@ public class AboutYourPetPageObject extends PageObject {
     }
     public void clickOnLoginLink(){
         loginLink.click();
+//        Actions actions = new Actions(driver);
+//        actions.moveToElement(loginLink).click().perform();
     }
     public WebElement getRegisteredEmailErrorMessage(){
         return registeredEmailErrorMessage;
@@ -141,5 +156,43 @@ public class AboutYourPetPageObject extends PageObject {
     }
     public String getPopUpPasswordLabel(){
         return popUpPasswordLabel.getText();
+    }
+    public void setPopUpEmail(String email){
+        popUpEmail.clear();
+        popUpEmail.sendKeys(email);
+    }
+    public void setPopUpPassword(String password){
+        popUpPassword.clear();
+        popUpPassword.sendKeys(password);
+    }
+    public void clickOnPopUpLogin(){
+        popUpLogin.click();
+    }
+    public boolean isLoggedIn(){
+        if(logedInAs.getText().contains(loggedInText))
+            return true;
+        return false;
+    }
+    public boolean isZipCodeDisabled(){
+        return  zipCode.isDisplayed();
+    }
+    public boolean isEmailDisabled(){
+        return emailAddress.isDisplayed();
+    }
+    public void waitForPouUpAppear(){
+        wait.waitForEelementAppear(popup, 10);
+    }
+    public void waitForPouUpDisappear(){
+        wait.waitForElementDisappear(By.xpath("//div[@name='forms.loginModalForm']"), 10);
+       // wait.waitForElementDisappear(popup, 100);
+    }
+
+    public boolean isElementDisplayed() {
+        try {
+            return popup.isDisplayed();
+        } catch (Exception e) {
+            System.out.println("the element is notin the DOM");
+            return false;
+        }
     }
 }

@@ -1,5 +1,6 @@
 package core;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,4 +28,13 @@ public class Wait {
         WebDriverWait wait = new WebDriverWait(driver, waitTime);
         wait.until(ExpectedConditions.textToBePresentInElement(el, text));
     }
+    public void waitForEelementAppear(WebElement element, int waitTime){
+        WebDriverWait wait = new WebDriverWait(driver, waitTime);
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+    public void waitForElementDisappear(By element, int waitTime){
+        WebDriverWait wait = new WebDriverWait(driver, waitTime);
+        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(element)));
+    }
+
 }
