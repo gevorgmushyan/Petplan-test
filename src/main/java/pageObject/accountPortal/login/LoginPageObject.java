@@ -1,6 +1,7 @@
 package pageObject.accountPortal.login;
 
 
+import core.Wait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,8 +31,11 @@ public class LoginPageObject extends PageObject {
     @FindBy(xpath = "//p[@ng-message='invalidCredentials']")
     private WebElement validationMessage;
 
+    private Wait wait;
+
     public LoginPageObject(WebDriver driver){
         super(driver);
+        wait = new Wait(driver);
     }
     public void clickOnLogo(){
         logo.click();
@@ -56,7 +60,9 @@ public class LoginPageObject extends PageObject {
     public String getValidationMessage(){
         return validationMessage.getText();
     }
-
+    public void waitForPageLoad(){
+        wait.waitForPageLoad();
+    }
 
 }
 

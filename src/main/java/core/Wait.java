@@ -28,6 +28,10 @@ public class Wait {
         WebDriverWait wait = new WebDriverWait(driver, waitTime);
         wait.until(ExpectedConditions.textToBePresentInElement(el, text));
     }
+    public void elementTextIsNotEmpty(WebElement el, int waitTime){
+        WebDriverWait wait = new WebDriverWait(driver, waitTime);
+        wait.until(ExpectedConditions.textToBePresentInElement(el,""));
+    }
     public void waitForEelementAppear(WebElement element, int waitTime){
         WebDriverWait wait = new WebDriverWait(driver, waitTime);
         wait.until(ExpectedConditions.visibilityOf(element));
@@ -36,5 +40,11 @@ public class Wait {
         WebDriverWait wait = new WebDriverWait(driver, waitTime);
         wait.until(ExpectedConditions.invisibilityOf(driver.findElement(element)));
     }
-
+    public static void sleep(int time){
+        try{
+            Thread.sleep(time);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }
