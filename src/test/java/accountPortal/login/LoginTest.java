@@ -42,7 +42,7 @@ public class LoginTest {
     }
     @Test   //PP-818
     private void clickOnLogo(){
-        login.ClickOnLogo();
+        login.clickOnLogo();
         assert (webDriver.getCurrentUrl().equals(legacyUrl));
     }
     @Test   //PP-113

@@ -56,7 +56,6 @@ public class AoutYourPetTest {
         aboutPet.setPetName(petName);
         aboutPet.selectCatButton();
         aboutPet.selectBreed(selectedBreedIndex);
-        //aboutPet.selectBreed("Afghan Hound");
         aboutPet.selectAge(selectedAgeIndex);
         aboutPet.setZipCode(validZipCode);
         aboutPet.setEmailAddress(validEmailAddress);
@@ -85,5 +84,10 @@ public class AoutYourPetTest {
         assert (aboutPet.isLoggedIn());
         assert (aboutPet.isZipCodeDisabled());
         assert (aboutPet.isEmailDisabled());
+    }
+    @Test   //PP-208
+    private void catButtonWithCatsList(){
+        aboutPet.selectCatButton();
+        assert (aboutPet.isCatsBreedListDisplyed());
     }
 }

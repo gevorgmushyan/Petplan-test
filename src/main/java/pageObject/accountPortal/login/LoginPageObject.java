@@ -33,8 +33,11 @@ public class LoginPageObject extends PageObject {
     public LoginPageObject(WebDriver driver){
         super(driver);
     }
-    public void ClickOnLogo(){
+    public void clickOnLogo(){
         logo.click();
+    }
+    public void clickOnSingIn(){
+        signIn.click();
     }
     public void setEmailAddress(String email){
         emailAddress.clear();
@@ -50,11 +53,10 @@ public class LoginPageObject extends PageObject {
     public String getPasswordLabel(){
         return passwordLabel.getText();
     }
-    public void clickOnSingIn(){
-        signIn.click();
-    }
     public String getValidationMessage(){
         return validationMessage.getText();
     }
+
+
 }
 

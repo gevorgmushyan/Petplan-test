@@ -3,11 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="9b3d127a-0280-47db-9364-dd52902be933" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/petplan.iml" afterPath="$PROJECT_DIR$/petplan.iml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Wait.java" afterPath="$PROJECT_DIR$/src/main/java/core/Wait.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/TAGS.java" afterPath="$PROJECT_DIR$/src/main/java/core/TAGS.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObject/accountPortal/login/LoginPageObject.java" afterPath="$PROJECT_DIR$/src/main/java/pageObject/accountPortal/login/LoginPageObject.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObject/salesFunnel/AboutYourPetPageObject.java" afterPath="$PROJECT_DIR$/src/main/java/pageObject/salesFunnel/AboutYourPetPageObject.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/accountPortal/login/LoginTest.java" afterPath="$PROJECT_DIR$/src/test/java/accountPortal/login/LoginTest.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/salesFunnel/AoutYourPetTest.java" afterPath="$PROJECT_DIR$/src/test/java/salesFunnel/AoutYourPetTest.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/Wait$1.class" afterPath="$PROJECT_DIR$/target/classes/core/Wait$1.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/core/Wait.class" afterPath="$PROJECT_DIR$/target/classes/core/Wait.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/accountPortal/login/LoginTest.class" afterPath="$PROJECT_DIR$/target/test-classes/accountPortal/login/LoginTest.class" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,26 +25,47 @@
       <file leaf-file-name="AboutYourPetPageObject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pageObject/salesFunnel/AboutYourPetPageObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="185" column="26" lean-forward="false" selection-start-line="185" selection-start-column="26" selection-end-line="185" selection-end-column="26" />
+            <state relative-caret-position="-650">
+              <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4211#4212#0" expanded="true" />
-                <element signature="e#4266#4267#0" expanded="true" />
-                <element signature="e#4695#4696#0" expanded="true" />
-                <element signature="e#4727#4728#0" expanded="true" />
-                <element signature="e#4767#4768#0" expanded="true" />
-                <element signature="e#4815#4816#0" expanded="true" />
-                <element signature="e#4858#4859#0" expanded="true" />
-                <element signature="e#4909#4910#0" expanded="true" />
+                <element signature="e#3243#3244#0" expanded="true" />
+                <element signature="e#4346#4347#0" expanded="true" />
+                <element signature="e#4401#4402#0" expanded="true" />
+                <element signature="e#4830#4831#0" expanded="true" />
+                <element signature="e#4862#4863#0" expanded="true" />
+                <element signature="e#4902#4903#0" expanded="true" />
+                <element signature="e#4950#4951#0" expanded="true" />
+                <element signature="e#4993#4994#0" expanded="true" />
+                <element signature="e#5044#5045#0" expanded="true" />
                 <element signature="method#setPopUpEmail#0;class#AboutYourPetPageObject#0" expanded="false" />
-                <element signature="e#5406#5407#0" expanded="true" />
-                <element signature="e#5451#5452#0" expanded="true" />
-                <element signature="e#5489#5490#0" expanded="true" />
-                <element signature="e#5538#5539#0" expanded="true" />
-                <element signature="e#5576#5577#0" expanded="true" />
-                <element signature="e#5629#5630#0" expanded="true" />
+                <element signature="e#5541#5542#0" expanded="true" />
+                <element signature="e#5586#5587#0" expanded="true" />
+                <element signature="e#5765#5766#0" expanded="true" />
+                <element signature="e#5814#5815#0" expanded="true" />
+                <element signature="e#5852#5853#0" expanded="true" />
+                <element signature="e#5905#5906#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TAGS.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/core/TAGS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PageObject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pageObject/PageObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="19" column="38" lean-forward="false" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -49,8 +73,8 @@
       <file leaf-file-name="AoutYourPetTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/salesFunnel/AoutYourPetTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="68" column="13" lean-forward="false" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="20" />
+            <state relative-caret-position="270">
+              <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,9 +85,12 @@
       <file leaf-file-name="LoginPageObject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pageObject/accountPortal/login/LoginPageObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="172">
+              <caret line="35" column="17" lean-forward="false" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+              <folding>
+                <element signature="method#setEmailAddress#0;class#LoginPageObject#0" expanded="false" />
+                <element signature="method#setPassword#0;class#LoginPageObject#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,21 +98,11 @@
       <file leaf-file-name="LoginTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/accountPortal/login/LoginTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="32" column="46" lean-forward="true" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+            <state relative-caret-position="382">
+              <caret line="40" column="25" lean-forward="true" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/core/Driver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="57" column="10" lean-forward="false" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -153,6 +170,7 @@
       <find>20</find>
       <find>10</find>
       <find>get</find>
+      <find>cat</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\STdev037\Documents\automation\test project\Petplan-test\src\main\java</dir>
@@ -174,12 +192,13 @@
         <option value="$PROJECT_DIR$/src/main/java/config/Config.java" />
         <option value="$PROJECT_DIR$/src/main/java/pageObject/PageObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/core/Driver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pageObject/accountPortal/login/LoginPageObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/pageObject/salesFunnel/TellUsAboutYourPet.java" />
-        <option value="$PROJECT_DIR$/src/test/java/accountPortal/login/LoginTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pageObject/salesFunnel/AboutYourPetPageObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/core/Wait.java" />
         <option value="$PROJECT_DIR$/src/test/java/salesFunnel/AoutYourPetTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/TAGS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pageObject/accountPortal/login/LoginPageObject.java" />
+        <option value="$PROJECT_DIR$/src/test/java/accountPortal/login/LoginTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pageObject/salesFunnel/AboutYourPetPageObject.java" />
       </list>
     </option>
   </component>
@@ -531,6 +550,38 @@
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
     </configuration>
+    <configuration name="AoutYourPetTest.catButtonWithCatsList" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="salesFunnel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="petplan" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="salesFunnel" />
+      <option name="MAIN_CLASS_NAME" value="salesFunnel.AoutYourPetTest" />
+      <option name="METHOD_NAME" value="catButtonWithCatsList" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
     <configuration name="AoutYourPetTest.getYoutQuoteWithValidData" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -627,38 +678,6 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="LoginTest.clickOnLogo" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="accountPortal.login.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="petplan" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="accountPortal.login" />
-      <option name="MAIN_CLASS_NAME" value="accountPortal.login.LoginTest" />
-      <option name="METHOD_NAME" value="clickOnLogo" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-    </configuration>
     <configuration name="LoginTest.loginWithWrongCredentials" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -725,19 +744,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="TestNG.LoginTest.clickOnLogo" />
-      <item index="1" class="java.lang.String" itemvalue="TestNG.LoginTest.loginWithWrongCredentials" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.LoginTest" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.AoutYourPetTest.getYoutQuoteWithValidData" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.AoutYourPetTest.loginWithRegisteredEmail" />
+      <item index="0" class="java.lang.String" itemvalue="TestNG.LoginTest.loginWithWrongCredentials" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.LoginTest" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.AoutYourPetTest.getYoutQuoteWithValidData" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.AoutYourPetTest.loginWithRegisteredEmail" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.AoutYourPetTest.catButtonWithCatsList" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="TestNG.AoutYourPetTest.loginWithRegisteredEmail" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.AoutYourPetTest.getYoutQuoteWithValidData" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.LoginTest" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.LoginTest.loginWithWrongCredentials" />
-        <item index="4" class="java.lang.String" itemvalue="TestNG.LoginTest.clickOnLogo" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.AoutYourPetTest.catButtonWithCatsList" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.AoutYourPetTest.getYoutQuoteWithValidData" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.LoginTest" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.LoginTest.loginWithWrongCredentials" />
       </list>
     </recent_temporary>
   </component>
@@ -797,38 +816,45 @@
       <option name="project" value="LOCAL" />
       <updated>1523375687509</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="PP-207 Done">
+      <created>1523447369745</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1523447369745</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AoutYourPetTest_loginWithRegisteredEmail - 2018.04.11 at 14h 55m 03s.xml">
-      <configuration name="AoutYourPetTest.loginWithRegisteredEmail" configurationId="TestNG" />
+    <history-entry file="AoutYourPetTest_catButtonWithCatsList - 2018.04.11 at 16h 49m 25s.xml">
+      <configuration name="AoutYourPetTest.catButtonWithCatsList" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AoutYourPetTest_loginWithRegisteredEmail - 2018.04.11 at 14h 55m 51s.xml">
-      <configuration name="AoutYourPetTest.loginWithRegisteredEmail" configurationId="TestNG" />
+    <history-entry file="AoutYourPetTest_catButtonWithCatsList - 2018.04.11 at 16h 51m 24s.xml">
+      <configuration name="AoutYourPetTest.catButtonWithCatsList" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AoutYourPetTest_loginWithRegisteredEmail - 2018.04.11 at 14h 58m 14s.xml">
-      <configuration name="AoutYourPetTest.loginWithRegisteredEmail" configurationId="TestNG" />
+    <history-entry file="AoutYourPetTest_catButtonWithCatsList - 2018.04.11 at 16h 57m 30s.xml">
+      <configuration name="AoutYourPetTest.catButtonWithCatsList" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AoutYourPetTest_loginWithRegisteredEmail - 2018.04.11 at 14h 58m 21s.xml">
-      <configuration name="AoutYourPetTest.loginWithRegisteredEmail" configurationId="TestNG" />
+    <history-entry file="AoutYourPetTest_catButtonWithCatsList - 2018.04.11 at 16h 58m 09s.xml">
+      <configuration name="AoutYourPetTest.catButtonWithCatsList" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AoutYourPetTest_loginWithRegisteredEmail - 2018.04.11 at 15h 03m 26s.xml">
-      <configuration name="AoutYourPetTest.loginWithRegisteredEmail" configurationId="TestNG" />
+    <history-entry file="AoutYourPetTest_catButtonWithCatsList - 2018.04.11 at 16h 59m 36s.xml">
+      <configuration name="AoutYourPetTest.catButtonWithCatsList" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AoutYourPetTest_loginWithRegisteredEmail - 2018.04.11 at 15h 04m 44s.xml">
-      <configuration name="AoutYourPetTest.loginWithRegisteredEmail" configurationId="TestNG" />
+    <history-entry file="AoutYourPetTest_catButtonWithCatsList - 2018.04.11 at 17h 01m 24s.xml">
+      <configuration name="AoutYourPetTest.catButtonWithCatsList" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AoutYourPetTest_loginWithRegisteredEmail - 2018.04.11 at 15h 11m 36s.xml">
-      <configuration name="AoutYourPetTest.loginWithRegisteredEmail" configurationId="TestNG" />
+    <history-entry file="AoutYourPetTest_catButtonWithCatsList - 2018.04.11 at 17h 01m 53s.xml">
+      <configuration name="AoutYourPetTest.catButtonWithCatsList" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AoutYourPetTest_loginWithRegisteredEmail - 2018.04.11 at 15h 12m 17s.xml">
-      <configuration name="AoutYourPetTest.loginWithRegisteredEmail" configurationId="TestNG" />
+    <history-entry file="AoutYourPetTest_catButtonWithCatsList - 2018.04.11 at 17h 09m 17s.xml">
+      <configuration name="AoutYourPetTest.catButtonWithCatsList" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AoutYourPetTest_loginWithRegisteredEmail - 2018.04.11 at 15h 13m 03s.xml">
-      <configuration name="AoutYourPetTest.loginWithRegisteredEmail" configurationId="TestNG" />
+    <history-entry file="AoutYourPetTest_catButtonWithCatsList - 2018.04.11 at 17h 09m 57s.xml">
+      <configuration name="AoutYourPetTest.catButtonWithCatsList" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AoutYourPetTest_loginWithRegisteredEmail - 2018.04.11 at 15h 13m 36s.xml">
+    <history-entry file="AoutYourPetTest_loginWithRegisteredEmail - 2018.04.11 at 17h 10m 52s.xml">
       <configuration name="AoutYourPetTest.loginWithRegisteredEmail" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -844,7 +870,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18724559" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2971506" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2653899" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -855,7 +881,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45454547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4559023" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -874,7 +900,8 @@
     <MESSAGE value="PP-119 full" />
     <MESSAGE value="PP-119 full+" />
     <MESSAGE value="PP-207 To DO" />
-    <option name="LAST_COMMIT_MESSAGE" value="PP-207 To DO" />
+    <MESSAGE value="PP-207 Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="PP-207 Done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -893,7 +920,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/salesFunnel/AoutYourPetTest.java</url>
-          <line>74</line>
+          <line>73</line>
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
@@ -909,13 +936,53 @@
           <properties />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/salesFunnel/AoutYourPetTest.java</url>
+          <line>90</line>
+          <properties />
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pageObject/salesFunnel/AboutYourPetPageObject.java</url>
+          <line>182</line>
+          <properties />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/pageObject/accountPortal/login/LoginPageObject.java</url>
+          <line>41</line>
+          <properties class="pageObject.accountPortal.login.LoginPageObject" method="setEmailAddress">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="29" />
+      <option name="time" value="33" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>breedList.get(i)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>breedList.get(0).getText()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>breedList.get(1).getText()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>breedList.get(1)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>wait.waitForElementDisappear(driver.findElement(By.xpath(&quot;//div[@class='botas']&quot;)), 100)</expression-string>
         <language-id>JAVA</language-id>
@@ -938,26 +1005,6 @@
       </expression>
       <expression>
         <expression-string>aboutPet.getPopUpEmailLabel()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>aboutPet.getPopUpEmailLabel(</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>aboutPet.getPopUpEmail()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>boutPet.getPopUpEmailLabel()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>webDriver.getCurrentUrl()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -1009,7 +1056,7 @@
         <state relative-caret-position="340">
           <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
           <folding>
-            <element signature="e#558#559#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1020,9 +1067,7 @@
           <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#1683#1684#0" expanded="false" />
-            <element signature="e#1729#1730#0" expanded="false" />
-            <element signature="e#1762#1763#0" expanded="false" />
+            <element signature="e#1746#1747#0" expanded="false" />
             <element signature="e#1792#1793#0" expanded="false" />
           </folding>
         </state>
@@ -1083,7 +1128,7 @@
         <state relative-caret-position="187">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <element signature="e#558#559#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1137,9 +1182,7 @@
           <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#1683#1684#0" expanded="false" />
-            <element signature="e#1729#1730#0" expanded="false" />
-            <element signature="e#1762#1763#0" expanded="false" />
+            <element signature="e#1746#1747#0" expanded="false" />
             <element signature="e#1792#1793#0" expanded="false" />
           </folding>
         </state>
@@ -1157,7 +1200,7 @@
         <state relative-caret-position="187">
           <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
           <folding>
-            <element signature="e#558#559#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1168,9 +1211,7 @@
           <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#1683#1684#0" expanded="false" />
-            <element signature="e#1729#1730#0" expanded="false" />
-            <element signature="e#1762#1763#0" expanded="false" />
+            <element signature="e#1746#1747#0" expanded="false" />
             <element signature="e#1792#1793#0" expanded="false" />
           </folding>
         </state>
@@ -1204,13 +1245,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/TAGS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1277,16 +1311,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageObject/PageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#558#559#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/core/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -1327,29 +1351,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageObject/accountPortal/login/LoginPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.10.0/selenium-support-3.10.0.jar!/org/openqa/selenium/support/ui/WebDriverWait.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-211">
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/accountPortal/login/LoginTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="32" column="46" lean-forward="true" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1373,31 +1379,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pageObject/salesFunnel/AboutYourPetPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="185" column="26" lean-forward="false" selection-start-line="185" selection-start-column="26" selection-end-line="185" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4211#4212#0" expanded="true" />
-            <element signature="e#4266#4267#0" expanded="true" />
-            <element signature="e#4695#4696#0" expanded="true" />
-            <element signature="e#4727#4728#0" expanded="true" />
-            <element signature="e#4767#4768#0" expanded="true" />
-            <element signature="e#4815#4816#0" expanded="true" />
-            <element signature="e#4858#4859#0" expanded="true" />
-            <element signature="e#4909#4910#0" expanded="true" />
-            <element signature="method#setPopUpEmail#0;class#AboutYourPetPageObject#0" expanded="false" />
-            <element signature="e#5406#5407#0" expanded="true" />
-            <element signature="e#5451#5452#0" expanded="true" />
-            <element signature="e#5489#5490#0" expanded="true" />
-            <element signature="e#5538#5539#0" expanded="true" />
-            <element signature="e#5576#5577#0" expanded="true" />
-            <element signature="e#5629#5630#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/core/Wait.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
@@ -1406,10 +1387,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageObject/PageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" column="38" lean-forward="false" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/TAGS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageObject/accountPortal/login/LoginPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="35" column="17" lean-forward="false" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+          <folding>
+            <element signature="method#setEmailAddress#0;class#LoginPageObject#0" expanded="false" />
+            <element signature="method#setPassword#0;class#LoginPageObject#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/accountPortal/login/LoginTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="40" column="25" lean-forward="true" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageObject/salesFunnel/AboutYourPetPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-650">
+          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3243#3244#0" expanded="true" />
+            <element signature="e#4346#4347#0" expanded="true" />
+            <element signature="e#4401#4402#0" expanded="true" />
+            <element signature="e#4830#4831#0" expanded="true" />
+            <element signature="e#4862#4863#0" expanded="true" />
+            <element signature="e#4902#4903#0" expanded="true" />
+            <element signature="e#4950#4951#0" expanded="true" />
+            <element signature="e#4993#4994#0" expanded="true" />
+            <element signature="e#5044#5045#0" expanded="true" />
+            <element signature="method#setPopUpEmail#0;class#AboutYourPetPageObject#0" expanded="false" />
+            <element signature="e#5541#5542#0" expanded="true" />
+            <element signature="e#5586#5587#0" expanded="true" />
+            <element signature="e#5765#5766#0" expanded="true" />
+            <element signature="e#5814#5815#0" expanded="true" />
+            <element signature="e#5852#5853#0" expanded="true" />
+            <element signature="e#5905#5906#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/salesFunnel/AoutYourPetTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="68" column="13" lean-forward="false" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="20" />
+        <state relative-caret-position="270">
+          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

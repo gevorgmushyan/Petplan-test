@@ -11,6 +11,8 @@ import pageObject.PageObject;
 
 import java.util.List;
 
+import static core.TAGS.DOMESTIC_SHORTHAIR;
+
 public class AboutYourPetPageObject extends PageObject {
     @FindBy(name = "petName")
     private WebElement petName;
@@ -102,9 +104,7 @@ public class AboutYourPetPageObject extends PageObject {
         catButton.click();
     }
     public void selectBreed(int i){
-        if( i < 0 || i == 3 || i > breedList.size()){
-            throw new IllegalArgumentException("Bad index for selecting breed");
-        }
+        assert (i >= 0 && i != 3 && i < breedList.size());
         breedButton.click();
         breedList.get(i).click();
     }
@@ -113,9 +113,7 @@ public class AboutYourPetPageObject extends PageObject {
         breedButton.sendKeys(Keys.RETURN);
     }
     public void selectAge(int i){
-        if( i < 0 || i > ageList.size()){
-            throw new IllegalArgumentException("Bad index for selecting age");
-        }
+        assert (i >=0 && i < ageList.size());
         ageButton.click();
         ageList.get(i).click();
     }
@@ -133,6 +131,11 @@ public class AboutYourPetPageObject extends PageObject {
     public void closePopUp(){
         popUpCloseButton.click();
 
+    }
+    public String getBreedItem(int i){
+        assert (i >= 0 && i < breedList.size());
+        WebElement span = driver.findElement(By.xpath("//div[contains(@label-value,'what’s your pet’s breed?')]//li["+(i+1)+"]/span"));
+        return span.getText();
     }
     public String getPopUpEmail(){
         return popUpEmail.getAttribute("value");
@@ -176,6 +179,10 @@ public class AboutYourPetPageObject extends PageObject {
     public boolean isZipCodeDisabled(){
         return  zipCode.isDisplayed();
     }
+    public boolean isCatsBreedListDisplyed(){
+        String breed = getBreedItem(0);
+        return breed.equals(DOMESTIC_SHORTHAIR);
+    }
     public boolean isEmailDisabled(){
         return emailAddress.isDisplayed();
     }
@@ -184,15 +191,5 @@ public class AboutYourPetPageObject extends PageObject {
     }
     public void waitForPouUpDisappear(){
         wait.waitForElementDisappear(By.xpath("//div[@name='forms.loginModalForm']"), 10);
-       // wait.waitForElementDisappear(popup, 100);
-    }
-
-    public boolean isElementDisplayed() {
-        try {
-            return popup.isDisplayed();
-        } catch (Exception e) {
-            System.out.println("the element is notin the DOM");
-            return false;
-        }
     }
 }
