@@ -22,10 +22,15 @@ public class TAGS {
     public static String PET_AGE_EMPTY_ERROR_MESSAGE = "Please tell us your pet‘s age.";
     public static String ZIP_CODE_EMPTY_ERROR_MESSAGE = "Please enter your zip code.";
     public static String EMAIL_ADDRESS_EMPTY_ERROR_MESSAGE = "Please enter your email address.";
+    public static String EMAIL_ADDRESS_INVALID_ERROR_MESSAGE = "Please enter a valid email address.";
 
 
 
     public static String DOMESTIC_SHORTHAIR = "Domestic Shorthair";
     public static String EMAIL_ADDRESS = "email address";
     public static String PASSWORD = "password";
+    public static String WHAT_IS_YOUR_PETS_NAME = "what is your pet’s name?";
+    public static String WHAT_IS_YOUR_PETS_BREED = "what’s your pet’s breed?";
+    public static String HOW_OLD_IS_YOUR_PET = "how old is your pet?";
+    public static String YOUR_EMAIL_ADDRESS = "your email address";
 }

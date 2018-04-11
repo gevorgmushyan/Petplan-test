@@ -40,6 +40,10 @@ public class Wait {
         WebDriverWait wait = new WebDriverWait(driver, waitTime);
         wait.until(ExpectedConditions.invisibilityOf(driver.findElement(element)));
     }
+    public void waitForElementDisappear(By element){
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(element));
+    }
     public static void sleep(int time){
         try{
             Thread.sleep(time);

@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObject.PageObject;
 
 import java.util.List;
+import java.util.Random;
 import java.util.function.Function;
 
 import static core.TAGS.DOMESTIC_SHORTHAIR;
@@ -18,6 +19,9 @@ import static core.TAGS.DOMESTIC_SHORTHAIR;
 public class AboutYourPetPageObject extends PageObject {
     @FindBy(name = "petName")
     private WebElement petName;
+
+    @FindBy(xpath = "//div[@class='panel__grid--one-half']/label")
+    private WebElement petNameLabel;
 
     @FindBy(xpath = "//input[@value='1']")
     private WebElement dogButton;
@@ -28,6 +32,9 @@ public class AboutYourPetPageObject extends PageObject {
     @FindBy(xpath = "//div[@class='panel__grid']/div[1]//label[@class='selector-input']")
     private WebElement breedButton;
 
+    @FindBy (xpath = "//div[@name='breed']/label/label")
+    private WebElement breedLabel;
+
     @FindBy(xpath = "//input[@name='breed']")
     private WebElement breedInput;
 
@@ -36,6 +43,9 @@ public class AboutYourPetPageObject extends PageObject {
 
     @FindBy(xpath = "//div[@class='panel__grid']/div[2]//label[@class='selector-input']")
     private WebElement ageButton;
+
+    @FindBy (xpath = "//input[@name='dateOfBirth']//../label")
+    private WebElement ageLabel;
 
     @FindBy(xpath = "//input[@name='dateOfBirth']")
     private WebElement ageInput;
@@ -48,6 +58,9 @@ public class AboutYourPetPageObject extends PageObject {
 
     @FindBy(name = "email")
     private WebElement emailAddress;
+
+    @FindBy(xpath = "//div[@class='panel__grid--two-third']/label")
+    private WebElement emailAddressLabel;
 
     @FindBy(xpath = "//input[@type='checkbox']")
     private WebElement emailMeQuote;
@@ -104,6 +117,15 @@ public class AboutYourPetPageObject extends PageObject {
     @FindBy(xpath = "//strong[contains(text(),'Please enter your email address.')]")
     private WebElement emptyEmailError;
 
+    @FindBy(xpath = "//strong[contains(text(),'Please enter a valid email address.')]")
+    private WebElement invalidEmailError;
+
+    @FindBy(xpath = "//span[@class='is-hidden-mobile'][contains(text(),'information')]")
+    private WebElement elementToFocusOut;
+
+    @FindBy(xpath = "//div[@class='breed-image is-hidden-tablet has-image']//img")
+    private WebElement petImage;
+
     private String loggedInText = "logged in as";
     private Wait wait;
 
@@ -114,6 +136,28 @@ public class AboutYourPetPageObject extends PageObject {
     public void setPetName(String name){
         petName.clear();
         petName.sendKeys(name);
+    }
+    public void setPetBreed(String breed){
+        breedInput.sendKeys(breed);
+    }
+    public void setPetAge(String age){
+        ageInput.sendKeys(age);
+    }
+    public void setZipCode(String zip){
+        zipCode.clear();
+        zipCode.sendKeys(zip);
+    }
+    public void setEmailAddress(String email) {
+        emailAddress.clear();
+        emailAddress.sendKeys(email);
+    }
+    public void setPopUpEmail(String email){
+        popUpEmail.clear();
+        popUpEmail.sendKeys(email);
+    }
+    public void setPopUpPassword(String password){
+        popUpPassword.clear();
+        popUpPassword.sendKeys(password);
     }
     public void selectDogButton(){
         dogButton.click();
@@ -126,6 +170,13 @@ public class AboutYourPetPageObject extends PageObject {
         breedButton.click();
         breedList.get(i).click();
     }
+    public void selectBreed(){
+        System.out.println(breedList.size());
+        if(breedList.size() == 0)
+           return;
+        int i = new Random().nextInt(breedList.size());
+        breedList.get(i).click();
+    }
     public void selectBreed(String breed){
         breedInput.sendKeys(breed);
         breedButton.sendKeys(Keys.RETURN);
@@ -135,20 +186,44 @@ public class AboutYourPetPageObject extends PageObject {
         ageButton.click();
         ageList.get(i).click();
     }
-    public void setZipCode(String zip){
-        zipCode.clear();
-        zipCode.sendKeys(zip);
-    }
-    public void setEmailAddress(String email) {
-        emailAddress.clear();
-        emailAddress.sendKeys(email);
+    public void selectAge(){
+        if(ageList.size() == 0)
+            return;
+        int i = new Random().nextInt(ageList.size());
+        ageList.get(i).click();
     }
     public void clickOnGetYourQuote(){
         getYourQuote.click();
     }
+    public void clickOnLoginLink(){
+        loginLink.click();
+//        Actions actions = new Actions(driver);
+//        actions.moveToElement(loginLink).click().perform();
+    }
+    public void clickOnPopUpLogin(){
+        popUpLogin.click();
+    }
     public void closePopUp(){
         popUpCloseButton.click();
 
+    }
+    public void clickOutside(){
+        new Actions(driver).moveToElement(elementToFocusOut).click().perform();
+    }
+    public void clickOnPetNameInput(){
+         new Actions(driver).moveToElement(petName).click().perform();
+    }
+    public void clickOnBreedInput(){
+        new Actions(driver).moveToElement(breedInput).click().perform();
+    }
+    public void clickOnAgeInput(){
+        new Actions(driver).moveToElement(ageInput).click().perform();
+    }
+    public void clickOnZipCodeInput(){
+        new Actions(driver).moveToElement(zipCode).click().perform();
+    }
+    public void clickOnEmailAddressInput(){
+        new Actions(driver).moveToElement(emailAddress).click().perform();
     }
     public String getFirstBreedItem(){
         String breedSpan = "//div[contains(@label-value,'what’s your pet’s breed?')]//li[1]/span";
@@ -156,22 +231,32 @@ public class AboutYourPetPageObject extends PageObject {
         WebElement span = driver.findElement(By.xpath(breedSpan));
         return span.getText();
     }
-    public String getPopUpEmail(){
-        return popUpEmail.getAttribute("value");
-    }
-    public String getRegisteredEmailError(){
-        return registeredEmailErrorMessage.getText();
-    }
-    public void clickOnLoginLink(){
-        loginLink.click();
-//        Actions actions = new Actions(driver);
-//        actions.moveToElement(loginLink).click().perform();
-    }
     public WebElement getRegisteredEmailErrorMessage(){
         return registeredEmailErrorMessage;
     }
     public WebElement getLoginLink(){
         return loginLink;
+    }
+    public String getPetNameLabel(){
+        return petNameLabel.getText();
+    }
+    public String getPetBreedLabel(){
+        return breedLabel.getText();
+    }
+    public int getPetBreedListSise(){
+        return breedList.size();
+    }
+    public String getPetAgeLabel(){
+        return ageLabel.getText();
+    }
+    public String getEmailAddressLabel(){
+        return emailAddressLabel.getText();
+    }
+    public String getPopUpEmail(){
+        return popUpEmail.getAttribute("value");
+    }
+    public String getRegisteredEmailError(){
+        return registeredEmailErrorMessage.getText();
     }
     public String getPopUpEmailLabel(){
         return popUpEmailLabel.getText();
@@ -194,16 +279,8 @@ public class AboutYourPetPageObject extends PageObject {
     public String getEmptyEmailError(){
         return emptyEmailError.getText();
     }
-    public void setPopUpEmail(String email){
-        popUpEmail.clear();
-        popUpEmail.sendKeys(email);
-    }
-    public void setPopUpPassword(String password){
-        popUpPassword.clear();
-        popUpPassword.sendKeys(password);
-    }
-    public void clickOnPopUpLogin(){
-        popUpLogin.click();
+    public String getInvalidEmailError(){
+        return invalidEmailError.getText();
     }
     public boolean isLoggedIn(){
         if(logedInAs.getText().contains(loggedInText))
@@ -215,11 +292,33 @@ public class AboutYourPetPageObject extends PageObject {
     }
     public boolean isCatsBreedListDisplyed(){
         WebElement element = driver.findElement(By.xpath("//div[contains(@label-value,'what’s your pet’s breed?')]//li[1]/span"));
-        wait.waitForElementText(element, DOMESTIC_SHORTHAIR, 10);
+        System.out.println("* " +element.getText());
+        wait.waitForElementText(element, DOMESTIC_SHORTHAIR, 20);
         return true;
     }
     public boolean isEmailDisabled(){
         return emailAddress.isDisplayed();
+    }
+    public boolean isBreedListOpens(){
+        return driver.findElement(By.xpath("//div[@name='breed']")).getAttribute("class").contains("open");
+    }
+    public boolean isBreedListClosed(){
+        return !driver.findElement(By.xpath("//div[@name='breed']")).getAttribute("class").contains("open");
+    }
+    public boolean isAgeListOpens(){
+        return driver.findElement(By.xpath("//div[@name='dateOfBirth']")).getAttribute("class").contains("open");
+    }
+    public boolean isAgeListClosed(){
+        return !driver.findElement(By.xpath("//div[@name='dateOfBirth']")).getAttribute("class").contains("open");
+    }
+    public void waitForPetNameErrorDisappear(){
+        wait.waitForElementDisappear(By.xpath("//strong[contains(text(),'Please enter your pet‘s name.')]"), 10);
+    }
+    public void waitForPetBreedErrorDisappear(){
+        wait.waitForElementDisappear(By.xpath("//div[@ng-messages='petInfoForm.breed.$error\'//p"));
+    }
+    public void waitForPetAgeErrorDisappear(){
+        wait.waitForElementDisappear(By.xpath("//div[@ng-messages='petInfoForm.dateOfBirth.$error']//p"));
     }
     public void waitForPopUpAppear(){
         wait.waitForEelementAppear(popup, 10);
@@ -229,5 +328,8 @@ public class AboutYourPetPageObject extends PageObject {
     }
     public void waitForExistingEmailValidatinMessage(){
         wait.waitForElementText(registeredEmailErrorMessage,"This email is taken, please either choose another or", 2);
+    }
+    public void waitForPetImageDisplyed(){
+        wait.waitForEelementAppear(petImage, 10);
     }
 }

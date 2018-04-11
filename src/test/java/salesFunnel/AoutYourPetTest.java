@@ -27,6 +27,9 @@ public class AoutYourPetTest {
     private String validEmailAddress = "example@example.com";
     private String registeredEmailAddress = "gevorgmio2@yandex.ru";
     private String password = "a";
+    private String breedFilterText = "aa";
+    private String petAgeFilterText = "rs";
+    private String invalidEmail = "aaa";
 
     @BeforeMethod
     private void beforeTest(){
@@ -79,7 +82,7 @@ public class AoutYourPetTest {
         assert (aboutPet.isZipCodeDisabled());
         assert (aboutPet.isEmailDisabled());
     }
-    @Test   //PP-208
+    @Test   //PP-208 ???????
     private void catButtonWithCatsList(){
         aboutPet.selectCatButton();
         assert (aboutPet.isCatsBreedListDisplyed());
@@ -93,5 +96,51 @@ public class AoutYourPetTest {
         assert(aboutPet.getEmptyAgeError().equals(PET_AGE_EMPTY_ERROR_MESSAGE));
         assert(aboutPet.getEmptyZipCodeError().equals(ZIP_CODE_EMPTY_ERROR_MESSAGE));
         assert(aboutPet.getEmptyEmailError().equals(EMAIL_ADDRESS_EMPTY_ERROR_MESSAGE));
+    }
+    @Test   //PP-2844
+    private void petNameFieldFunctionality(){
+        aboutPet.clickOnPetNameInput();
+        aboutPet.clickOutside();
+        assert(aboutPet.getEmptyPetNameError().equals(PET_NAME_EMPTY_ERROR_MESSAGE));
+        aboutPet.setPetName(petName);
+        assert(aboutPet.getPetNameLabel().equals(WHAT_IS_YOUR_PETS_NAME));
+        aboutPet.waitForPetNameErrorDisappear();
+    }
+    @Test   //PP-2845
+    private void petBreedFieldFunctionality(){
+        aboutPet.clickOnBreedInput();
+        assert(aboutPet.isBreedListOpens());
+        aboutPet.clickOutside();
+        assert(aboutPet.isBreedListClosed());
+        assert(aboutPet.getEmptyBreedError().equals(PET_BREED_EMPTY_ERROR_MESSAGE));
+        aboutPet.setPetBreed(breedFilterText);
+        assert(aboutPet.getPetBreedLabel().equals(WHAT_IS_YOUR_PETS_BREED));
+        aboutPet.waitForPetBreedErrorDisappear();
+        aboutPet.selectBreed();
+        aboutPet.waitForPetImageDisplyed();
+    }
+    @Test   //PP-2846
+    private void petAgeFieldFunctionality(){
+        aboutPet.clickOnAgeInput();
+        assert(aboutPet.isAgeListOpens());
+        aboutPet.clickOutside();
+        assert(aboutPet.isAgeListClosed());
+        assert(aboutPet.getEmptyAgeError().equals(PET_AGE_EMPTY_ERROR_MESSAGE));
+        aboutPet.setPetAge(petAgeFilterText);
+        assert(aboutPet.getPetAgeLabel().equals(HOW_OLD_IS_YOUR_PET));
+        aboutPet.waitForPetAgeErrorDisappear();//??? long time
+        aboutPet.selectAge();
+    }
+    @Test   //PP-2847 ?????
+    private void emailAddressFunctionality(){
+        js.executeScript("window.scrollBy(0,100)");
+        aboutPet.clickOnEmailAddressInput();
+        aboutPet.clickOutside();
+        assert(aboutPet.getEmptyEmailError().equals(EMAIL_ADDRESS_EMPTY_ERROR_MESSAGE));
+        aboutPet.setEmailAddress(invalidEmail);
+        assert(aboutPet.getEmailAddressLabel().equals(YOUR_EMAIL_ADDRESS));
+        assert(aboutPet.getInvalidEmailError().equals(EMAIL_ADDRESS_INVALID_ERROR_MESSAGE));
+        aboutPet.setEmailAddress(validEmailAddress);
+
     }
 }
