@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObject.PageObject;
 
@@ -37,6 +38,9 @@ public class AboutYourPetPageObject extends PageObject {
 
     @FindBy(xpath = "//input[@name='breed']")
     private WebElement breedInput;
+
+    @FindBy(xpath = "//div[@class='input selector-container ng-isolate-scope remove-button has-value']//label[@class='selector-input']//ul[@class='selector-values']//li[@ng-repeat='(index, option) in selectedValues track by index']//div[@ng-include='viewItemTemplate']//span[@ng-bind='option[labelAttr] || option']")
+    private WebElement selectedBreed;
 
     @FindBy(xpath = "//div[contains(@label-value,'what’s your pet’s breed?')]//li")
     private List<WebElement> breedList;
@@ -126,6 +130,9 @@ public class AboutYourPetPageObject extends PageObject {
     @FindBy(xpath = "//div[@class='breed-image is-hidden-tablet has-image']//img")
     private WebElement petImage;
 
+    @FindBy(xpath = "//a[@class='btn__link--primary btn__link--customize']")
+    private WebElement secondPageElement;
+
     private String loggedInText = "logged in as";
     private Wait wait;
 
@@ -171,7 +178,6 @@ public class AboutYourPetPageObject extends PageObject {
         breedList.get(i).click();
     }
     public void selectBreed(){
-        System.out.println(breedList.size());
         if(breedList.size() == 0)
            return;
         int i = new Random().nextInt(breedList.size());
@@ -291,9 +297,8 @@ public class AboutYourPetPageObject extends PageObject {
         return  zipCode.isDisplayed();
     }
     public boolean isCatsBreedListDisplyed(){
-        WebElement element = driver.findElement(By.xpath("//div[contains(@label-value,'what’s your pet’s breed?')]//li[1]/span"));
-        System.out.println("* " +element.getText());
-        wait.waitForElementText(element, DOMESTIC_SHORTHAIR, 20);
+        selectBreed(0);
+        wait.waitForElementText(selectedBreed, DOMESTIC_SHORTHAIR, 20);
         return true;
     }
     public boolean isEmailDisabled(){
@@ -311,6 +316,15 @@ public class AboutYourPetPageObject extends PageObject {
     public boolean isAgeListClosed(){
         return !driver.findElement(By.xpath("//div[@name='dateOfBirth']")).getAttribute("class").contains("open");
     }
+    public boolean isBreedLabelDisappear(){
+        return breedLabel.isDisplayed();
+    }
+    public boolean isAgeLabelDisappear(){
+        return ageLabel.isDisplayed();
+    }
+    public boolean isEmailAddressHasError(){
+        return emailAddress.getAttribute("class").contains("has-error");
+    }
     public void waitForPetNameErrorDisappear(){
         wait.waitForElementDisappear(By.xpath("//strong[contains(text(),'Please enter your pet‘s name.')]"), 10);
     }
@@ -318,7 +332,25 @@ public class AboutYourPetPageObject extends PageObject {
         wait.waitForElementDisappear(By.xpath("//div[@ng-messages='petInfoForm.breed.$error\'//p"));
     }
     public void waitForPetAgeErrorDisappear(){
-        wait.waitForElementDisappear(By.xpath("//div[@ng-messages='petInfoForm.dateOfBirth.$error']//p"));
+        //wait.waitForElementDisappear(By.xpath("//div[@ng-messages='petInfoForm.dateOfBirth.$error']//p"),);
+       WebDriverWait wait = new WebDriverWait(driver,10);
+
+        wait.until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver driver) {
+                WebElement button = driver.findElement(By.xpath("//div[@name='dateOfBirth']//..//div[2]"));
+                String enabled = button.getAttribute("class");
+                if(enabled.equals("ng-active"))
+                    return true;
+                else
+                    return false;
+            }
+        });
+    }
+    public void waitForEmailErrorDisappear(){
+        wait.waitForEmailArrtibutContainsText(emailAddress, "class", "has-error");
+    }
+    public void waitForEmailLableAppear(){
+        wait.waitForEelementAppear(emailAddressLabel, 10);
     }
     public void waitForPopUpAppear(){
         wait.waitForEelementAppear(popup, 10);
@@ -331,5 +363,11 @@ public class AboutYourPetPageObject extends PageObject {
     }
     public void waitForPetImageDisplyed(){
         wait.waitForEelementAppear(petImage, 10);
+    }
+    public void waitForChooseAndCustomizePage(){
+        wait.waitForEelementAppear(secondPageElement, 30);
+    }
+    public void waitForGetYourQuoteAppear(){
+        wait.waitForEelementAppear(getYourQuote, 10);
     }
 }
