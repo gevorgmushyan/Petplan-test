@@ -30,6 +30,8 @@ public class LoginPageObject extends PageObject {
     private WebElement invalidEmailError;
     @FindBy(xpath = "//p[@ng-message='invalidCredentials']")
     private WebElement validationMessage;
+    @FindBy(xpath = "//div[@class='login-status is-hidden-tablet']//p")
+    private WebElement accountElement;
 
     private Wait wait;
 
@@ -63,6 +65,15 @@ public class LoginPageObject extends PageObject {
     public void waitForPageLoad(){
         wait.waitForPageLoad();
     }
-
+    public void loginToAccount(String email, String password){
+        waitForEmailAddressInputAppear();
+        setEmailAddress(email);
+        setPassword(password);
+        clickOnSingIn();
+        wait.waitForEelementAppear(accountElement, 20);
+    }
+    public void waitForEmailAddressInputAppear(){
+        wait.waitForEelementAppear(emailAddress, 20);
+    }
 }
 

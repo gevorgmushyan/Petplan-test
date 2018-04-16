@@ -9,7 +9,7 @@ public class TAGS {
     public static final int OPERA = 4;
     public static final int EDGE = 5;
 
-    public static String LOGIN_PAGE_URL = "https://account.gopetplan.com/#/Login";
+    public static String LOGIN_PAGE_URL = "https://dev.account.gopetplan.com/#/Login";
     public static String LEGACY_CMS_Url = "https://www.gopetplan.com/";
     public static String ACCOUNT_PORTAL_URL = "http://account.gopetplan.com/beta#/AboutYourPet?Region=US";
     public static String CHOOSE_AND_CUSTOMIZE_URL = "https://account.gopetplan.com/beta#/ChooseAndCustomize";
