@@ -11,10 +11,11 @@ import pageObject.salesFunnel.AboutYourPetPageObject;
 
 import static core.TAGS.*;
 import static core.Wait.sleep;
+import static org.testng.AssertJUnit.assertFalse;
 
 import java.util.concurrent.TimeUnit;
 
-public class AoutYourPetTest {
+public class AboutYourPetTest {
     private Driver driver;
     private WebDriver webDriver;
     private AboutYourPetPageObject aboutPet;
@@ -24,7 +25,7 @@ public class AoutYourPetTest {
     private int selectedBreedIndex = 10;
     private int selectedAgeIndex = 19;
     private String validZipCode = "80246";
-    private String validEmailAddress = "example@example.com";
+    private String notRegisteredEmailAddress = "example@example.com";
     private String registeredEmailAddress = "gevorgmio2@yandex.ru";
     private String password = "a";
     private String breedFilterText = "aa";
@@ -49,17 +50,18 @@ public class AoutYourPetTest {
         webDriver.quit();
     }
     @Test   //PP-192
-    private void getYoutQuoteWithValidData() {
+    private void getYoutQuoteWithValidData() {///????
         aboutPet.setPetName(petName);
         aboutPet.selectCatButton();
         aboutPet.selectBreed(selectedBreedIndex);
         aboutPet.selectAge(selectedAgeIndex);
         aboutPet.setZipCode(validZipCode);
-        aboutPet.setEmailAddress(validEmailAddress);
-        js.executeScript("window.scrollBy(0,200)");
-       // sleep(1000); //To Do
         aboutPet.clickOnGetYourQuote();
-       // sleep(1000); //To Do
+        aboutPet.setEmailAddress(notRegisteredEmailAddress);
+        js.executeScript("window.scrollBy(0,200)");
+        sleep(2000);
+        aboutPet.clickOnGetYourQuote();
+        aboutPet.waitForChooseAndCustomizePage();
         assert (webDriver.getCurrentUrl().equals(CHOOSE_AND_CUSTOMIZE_URL));
     }
     @Test   //PP-207
@@ -82,7 +84,7 @@ public class AoutYourPetTest {
         assert (aboutPet.isZipCodeDisabled());
         assert (aboutPet.isEmailDisabled());
     }
-    @Test   //PP-208 ???????
+    @Test   //PP-208
     private void catButtonWithCatsList(){
         aboutPet.selectCatButton();
         assert (aboutPet.isCatsBreedListDisplyed());
@@ -90,6 +92,7 @@ public class AoutYourPetTest {
     @Test   //PP-2843
     private void getYourQuoteWithEmptyFields(){
         js.executeScript("window.scrollBy(0,200)");
+        aboutPet.waitForGetYourQuoteAppear();
         aboutPet.clickOnGetYourQuote();
         assert(aboutPet.getEmptyPetNameError().equals(PET_NAME_EMPTY_ERROR_MESSAGE));
         assert(aboutPet.getEmptyBreedError().equals(PET_BREED_EMPTY_ERROR_MESSAGE));
@@ -118,9 +121,11 @@ public class AoutYourPetTest {
         aboutPet.waitForPetBreedErrorDisappear();
         aboutPet.selectBreed();
         aboutPet.waitForPetImageDisplyed();
+        sleep(100);
+        assertFalse(aboutPet.isBreedLabelDisappear());
     }
     @Test   //PP-2846
-    private void petAgeFieldFunctionality(){
+    private void petAgeFieldFunctionality(){////?????
         aboutPet.clickOnAgeInput();
         assert(aboutPet.isAgeListOpens());
         aboutPet.clickOutside();
@@ -128,19 +133,21 @@ public class AoutYourPetTest {
         assert(aboutPet.getEmptyAgeError().equals(PET_AGE_EMPTY_ERROR_MESSAGE));
         aboutPet.setPetAge(petAgeFilterText);
         assert(aboutPet.getPetAgeLabel().equals(HOW_OLD_IS_YOUR_PET));
-        aboutPet.waitForPetAgeErrorDisappear();//??? long time
         aboutPet.selectAge();
+        sleep(600);
+        assertFalse(aboutPet.isAgeLabelDisappear());
     }
-    @Test   //PP-2847 ?????
+    @Test   //PP-2847
     private void emailAddressFunctionality(){
         js.executeScript("window.scrollBy(0,100)");
         aboutPet.clickOnEmailAddressInput();
         aboutPet.clickOutside();
         assert(aboutPet.getEmptyEmailError().equals(EMAIL_ADDRESS_EMPTY_ERROR_MESSAGE));
         aboutPet.setEmailAddress(invalidEmail);
-        assert(aboutPet.getEmailAddressLabel().equals(YOUR_EMAIL_ADDRESS));
+        aboutPet.waitForEmailLableAppear();
         assert(aboutPet.getInvalidEmailError().equals(EMAIL_ADDRESS_INVALID_ERROR_MESSAGE));
-        aboutPet.setEmailAddress(validEmailAddress);
-
+        aboutPet.setEmailAddress(notRegisteredEmailAddress);
+        aboutPet.waitForEmailErrorDisappear();
+        aboutPet.waitForEmailLableAppear();
     }
 }

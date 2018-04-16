@@ -44,6 +44,18 @@ public class Wait {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.invisibilityOfElementLocated(element));
     }
+    public void waitForEmailArrtibutContainsText(WebElement el, String attribut, String text){
+        WebDriverWait wait = new WebDriverWait(driver,20);
+        wait.until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver driver) {
+                String enabled = el.getAttribute(attribut);
+                if(enabled.contains(text))
+                    return true;
+                else
+                    return false;
+            }
+        });
+    }
     public static void sleep(int time){
         try{
             Thread.sleep(time);
